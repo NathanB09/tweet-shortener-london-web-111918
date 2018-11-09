@@ -17,11 +17,19 @@ end
 def word_substituter(tweet)
   tweet_array = tweet.split
 
-  dictionary.each do |word, subtitute|
-    if tweet_array.include?(word)
-      tweet_array[tweet_array.index(word)] = subtitute
+  tweet_array.each do |t_word|
+    dictionary.each do |word, subtitute|
+      if t_word == word
+        tweet_array[tweet_array.index(word)] = subtitute
+      end
     end
   end
+
+  # dictionary.each do |word, subtitute|
+  #   if tweet_array.include?(word)
+  #     tweet_array[tweet_array.index(word)] = subtitute
+  #   end
+  # end
 
   tweet_array.join(" ")
 end
