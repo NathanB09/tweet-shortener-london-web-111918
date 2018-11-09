@@ -13,7 +13,7 @@ end
 
 def word_substituter(tweet)
   tweet_array = tweet.split
-  
+
   dictionary.each do |word, subtitute|
     if tweet_array.include?(word)
       tweet_array[tweet_array.index(word)] = subtitute
